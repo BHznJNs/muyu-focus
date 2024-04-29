@@ -1,0 +1,19 @@
+.tabs-container {
+    overflow: hidden;
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 200%;
+    height: 100%;
+    transition: transform .6s;
+}
+
+.tabs.show-countdown {
+    transform: translateX(0);
+}
+
+.tabs.show-result {
+    transform: translateX(-50%);
+}

@@ -1,0 +1,110 @@
+.sound-source {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sound-image {
+    position: relative;
+    width: 14rem;
+    max-width: min(60vw, 50vh);
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+}
+
+.sound-image::before,
+.sound-image::after {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-radius: 50%;
+}
+.sound-image::before {
+    animation: ripple-border 1.2s infinite;
+}
+.sound-image::after {
+    animation: ripple-border 1.2s .6s infinite;
+}
+
+@keyframes ripple-border {
+    from {
+        opacity: .875;
+        box-shadow: 0 0 0 0 var(--accent-color);
+    }
+    to {
+        opacity: 0;
+        box-shadow: 0 0 0 1.6rem var(--accent-color);
+    }
+}
+
+.sound-image img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: var(--shadow-sm);
+    transition: opacity .3s;
+}
+
+body.sound-muyu img.sound-muyu,
+body.sound-drops img.sound-drops,
+body.sound-pendulum img.sound-pendulum,
+body.sound-book img.sound-book {
+    opacity: 1;
+}
+
+.sound-switch {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.sound-switch > span {
+    color: var(--ft-color);
+    font-size: 1.25rem;
+}
+
+.sound-switch button {
+    box-shadow: var(--shadow-sm);
+}
+
+@media screen and (orientation: portrait) {
+    .sound-source {
+        gap: 2.4rem;
+        flex-direction: column-reverse;
+        padding-bottom: 2.4rem;
+    }
+    .sound-switch {
+        width: 100%;
+        padding: .4rem 0;
+        margin-bottom: .4rem;
+        background-color: var(--high-bg-color);
+        box-shadow: var(--shadow-md-1);
+    }
+    .sound-switch span {
+        color: var(--accent-color-darken);
+    }
+    .sound-switch button {
+        box-shadow: none;
+    }
+}
+@media screen and (orientation: landscape)  {
+    .sound-source {
+        padding: 3rem 0;
+        gap: 4rem;
+    }
+    @media screen and (max-width: 640px) {
+        .sound-switch .sound-desc {
+            display: none;
+        }
+    }    
+}
+@media screen and (max-height: 420px) {
+    .sound-source {
+        gap: 2rem;
+    }
+}

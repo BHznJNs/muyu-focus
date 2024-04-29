@@ -1,0 +1,66 @@
+button {
+    all: unset;
+    display: flex;
+    padding: .6rem 1rem;
+    color: var(--accent-color-darken);
+    background-color: var(--high-bg-color);
+    text-decoration: none;
+    font-family: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 8px;
+    user-select: none;
+    transition: color .3s,
+                background .3s;
+}
+
+button.active,
+button:hover {
+    background-color: var(--accent-color-lighten) !important;
+}
+
+button:focus-visible {
+    outline: solid 2px var(--deep-bd-color);
+}
+
+button.action {
+    width: 5.5rem;
+    height: 5.5rem;
+    padding: .4rem;
+    border-radius: 50%;
+}
+
+button.action.small {
+    width: 3rem;
+    height: 3rem;
+}
+
+button img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+button .icon {
+    font-size: 0;
+    overflow: hidden;
+}
+
+button .icon img {
+    position: relative;
+    left: -100%;
+    border-right: 100%;
+    filter: drop-shadow(var(--accent-color-darken) 24px 0px);
+}
+
+button .text {
+    margin-left: 4px;
+    margin-bottom: 2px;
+    font-size: 1.125rem;
+}
+
+@media screen and (max-height: 420px) {
+    button.action {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+}

@@ -1,0 +1,86 @@
+.result, .result-info {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result h1 {
+    margin: 0 auto;
+    padding: 1rem 5rem 1rem 6rem;
+    text-align: center;
+    border-radius: 1rem;
+    color: var(--accent-color-darken);
+    background-color: var(--high-bg-color);
+    box-shadow: var(--shadow-md-1);
+}
+
+.cards {
+    display: grid;
+    row-gap: .6rem;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.5rem;
+}
+
+.cards > * {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.show-result .cards > * {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.cards > *:nth-child(1),
+.cards > *:nth-child(2) {
+    transition: transform .3s .6s,
+                opacity .3s .6s;
+}
+.cards > *:nth-child(3),
+.cards > *:nth-child(4) {
+    transition: transform .3s .9s,
+                opacity .3s .9s;
+}
+
+.cards .card-desc {
+    margin-left: 2rem;
+}
+
+.cards time-picker {
+    gap: 2px;
+    font-size: 1.75rem;
+    margin: 0;
+    pointer-events: none;
+}
+.cards time-picker .colon {
+    font-size: 1.5rem;
+}
+
+.cards #sound-count {
+    color: var(--accent-color-darken);
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.result .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.result button {
+    box-shadow: var(--shadow-sm);
+}
+
+@media screen and (orientation: portrait) {
+    .result {
+        justify-content: space-between;
+    }
+    .result .actions {
+        margin-bottom: 2.4rem;
+    }
+}

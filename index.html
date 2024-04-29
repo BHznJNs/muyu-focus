@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="light dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专注木鱼</title>
+    <script src="./scripts/index.js" type="module" defer></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="sound-muyu light">
+<script>
+const darkModeMediaQuery = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)")
+const darkModeSwitcher = () => {
+    const targetClassList = document.body.classList
+    const isDarkMode = darkModeMediaQuery.matches
+    document.body.classList.toggle("dark", isDarkMode)
+    document.body.classList.toggle("light", !isDarkMode)
+}
+if (darkModeMediaQuery) {
+    darkModeMediaQuery.addListener(darkModeSwitcher)
+    darkModeSwitcher()
+}
+</script>
+<main>
+    <div class="sound-source">
+        <div class="sound-image">
+            <img class="sound-muyu" src="./assets/muyu.png" loading="lazy">
+            <img class="sound-drops" src="./assets/drops.png" loading="lazy">
+            <img class="sound-pendulum" src="./assets/pendulum.png" loading="lazy">
+            <img class="sound-book" src="./assets/book.png" loading="lazy">
+        </div>
+        <div class="sound-switch">
+            <button id="previous-sound">
+                <div class="icon">
+                    <img src="./assets/icons/arrow_back.svg" draggable="false">
+                </div>
+            </button>
+            <span><span class="sound-desc">当前音效：</span><span id="current-sound">木鱼</span></span>
+            <button id="next-sound">
+                <div class="icon">
+                    <img src="./assets/icons/arrow_forward.svg" draggable="false">
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="tabs-container">
+        <div class="tabs show-countdown">
+            <div class="countdown ready">
+                <time-picker id="timer"></time-picker>
+                <div class="time-candidates">
+                    <button>00:00:30</button>
+                    <button>00:02:00</button>
+                    <button>00:03:00</button>
+                    <button>00:05:00</button>
+                    <button>00:08:00</button>
+                    <button>00:10:00</button>
+                </div>
+                <div class="actions">
+                    <button class="action" id="stop">
+                        <img src="./assets/icons/stop.svg" draggable="false">
+                    </button>
+                    <button class="action" id="pause">
+                        <img src="./assets/icons/pause.svg" draggable="false">
+                    </button>
+                    <button class="action" id="start">
+                        <img src="./assets/icons/play_arrow.svg" draggable="false">
+                    </button>
+                </div>
+            </div>
+            <div class="result">
+                <div class="result-info">
+                    <h1>完成！</h1>
+                    <div class="cards">
+                        <div class="card-desc">专注时长：</div>
+                        <time-picker id="result-duration"></time-picker>
+                        <div class="card-desc">响声次数：</div>
+                        <span><span id="sound-count">0</span>次</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="return">
+                        <div class="icon">
+                            <img src="./assets/icons/return.svg">
+                        </div>
+                        <span class="text">返回</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="fab-group">
+    <button class="action small" id="fullscreen" onclick="document.body.requestFullscreen()">
+        <img src="./assets/icons/fullscreen.svg" draggable="false">
+    </button>
+    <button class="action small" id="fullscreen-exit" onclick="document.exitFullscreen()">
+        <img src="./assets/icons/fullscreen_exit.svg" draggable="false">
+    </button>
+    <button class="action small" id="help">
+        <img src="./assets/icons/help.svg" draggable="false">
+    </button>
+</div>
+</body>
+</html>

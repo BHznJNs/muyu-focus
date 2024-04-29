@@ -1,0 +1,140 @@
+.countdown {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.countdown:not(.ready) time-picker {
+    pointer-events: none;
+} 
+
+.time-candidates {
+    display: grid;
+    gap: .8rem 1.2rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+}
+
+.time-candidates button {
+    text-align: center;
+    font-size: 1.125rem;
+    transition: opacity .3s .3s,
+                background .3s;
+}
+
+.time-candidates button:disabled {
+    opacity: .6;
+    pointer-events: none;
+}
+
+.countdown .actions {
+    position: relative;
+    height: 5.5rem;
+    margin-top: 3rem;
+}
+
+.countdown .actions button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: var(--shadow-md-1);
+    z-index: 1;
+    transition: background .3s,
+                box-shadow .3s,
+                left .3s,
+                opacity .3s;
+}
+.countdown .actions button:hover {
+    box-shadow: var(--shadow-md-2);
+}
+
+.countdown.started #start {
+    left: 25%;
+    opacity: 0;
+    pointer-events: none;
+    transition: background .3s,
+                box-shadow .3s,
+                left .3s .3s,
+                opacity .15s;
+}
+.countdown.paused #start {
+    left: 25%;
+    opacity: 1;
+    pointer-events: auto;
+}
+.countdown.started #pause,
+.countdown.paused #pause {
+    left: 25%;
+}
+.countdown.started #stop,
+.countdown.paused #stop {
+    left: 75%;
+}
+
+#start,
+#pause {
+    background-color: var(--accent-color-darken);
+}
+#start:hover,
+#pause:hover {
+    background-color: var(--accent-color) !important;
+}
+#stop {
+    background-color: var(--stop-bg-color);
+}
+#stop:hover {
+    background-color: var(--hovered-stop-bg-color) !important;
+}
+body.light #start img,
+body.light #pause img,
+body.light #stop img,
+body.dark #stop img {
+    filter: invert(1);
+}
+
+@media screen and (orientation: portrait) {
+    .countdown {
+        justify-content: space-between;
+    }
+    .time-candidates {
+        display: none;
+    }
+    .countdown .actions {
+        margin-bottom: 2.4rem;
+    }
+    .countdown.started .actions,
+    .countdown.paused .actions {
+        margin-right: 1.2rem;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .countdown {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .time-candidates {
+        gap: .6rem .6rem;
+    }
+}
+
+@media screen and (max-height: 420px) {
+    .countdown {
+        gap: 1rem;
+    }
+    .time-candidates {
+        gap: .6rem .6rem;
+    }
+    .time-candidates button {
+        font-size: 1rem;
+        padding: .4rem .8rem;
+    }
+    .countdown .actions {
+        margin-top: 1rem;
+    }
+}

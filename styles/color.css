@@ -1,0 +1,57 @@
+body.light {
+    --ft-color: #333;
+    --bg-color: #f7f7f7;
+    --high-bg-color: #fff;
+    --hovered-bg-color: #eee;
+    --shallow-bd-color: #e0e0e0;
+    --deep-bd-color: #9e9e9e;
+
+    --stop-bg-color: #ba1a1a;
+    --hovered-stop-bg-color: #c74747;
+}
+
+body.dark {
+    --accent-color: #bdbdbd;
+    --accent-color-darken: #eee;
+    --accent-color-lighten: #757575;
+
+    --ft-color: #f7f7f7;
+    --bg-color: #161616;
+    --high-bg-color: #333;
+    --hovered-bg-color: #616161;
+    --shallow-bd-color: #616161;
+    --deep-bd-color: #bdbdbd;
+
+    --stop-bg-color: #e53935;
+    --hovered-stop-bg-color: #a02725;
+}
+
+body.light.sound-muyu {
+    --bg-color: #fffbff;
+    --high-bg-color: #fff8f4;
+    --accent-color: #a16c2e;
+    --accent-color-darken: #683d00;
+    --accent-color-lighten: #ffeee0;
+}
+body.light.sound-pendulum {
+    --bg-color: #fffbff;
+    --high-bg-color: #fff8f3;
+    --accent-color: #af8b4c;
+    --accent-color-darken: #78591f;
+    --accent-color-lighten: #ffeed8;
+}
+body.light.sound-drops {
+    --bg-color: #fcfcff;
+    --high-bg-color: #f6f9ff;
+    --accent-color: #3d7da8;
+    --accent-color-darken: #004b6f;
+    --accent-color-lighten: #e6f2ff;
+}
+body.light.sound-book {
+    --bg-color: #fffbff;
+    --high-bg-color: #fff8f7;
+    --accent-color: #e2979b;
+    --accent-color-darken: #8a4d51;
+    --accent-color-lighten: #ffedec;
+}
+
