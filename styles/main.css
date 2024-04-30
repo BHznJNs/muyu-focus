@@ -7,7 +7,7 @@ main {
 
 @media screen and (min-width: 960px) {
     main {
-        margin: 0 8vw 0 5vw;
+        padding: 0 8vw 0 5vw;
     }
 }
 
