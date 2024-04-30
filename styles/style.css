@@ -1,11 +1,13 @@
 @import url(./color.css);
 @import url(./button.css);
+@import url(./dialog.css);
 @import url(./main.css);
 @import url(./tabs.css);
 @import url(./fab.css);
 @import url(./sound.css);
 @import url(./countdown.css);
 @import url(./result.css);
+@import url(./help.css);
 @import url(../scripts/components/time-picker.css);
 
 body {

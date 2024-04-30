@@ -37,17 +37,6 @@ time-picker .second {
     transition: box-shadow .3s .3s;
 }
 
-#time-picker-dialog {
-    width: 85%;
-    max-width: 25rem;
-    color: var(--fr-color);
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 12px;
-    outline: none;
-    box-shadow: var(--shadow-lg);
-}
-
 #time-picker-dialog .time-picker-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -96,15 +85,6 @@ time-picker .second {
 }
 .time-picker-item.selected {
     color: var(--accent-color)
-}
-
-.time-picker-actions {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 1rem;
-    grid-area: action;
-    margin-top: 2rem;
-    color: var(--accent-color);
 }
 
 @media screen and (min-width: 768px) {

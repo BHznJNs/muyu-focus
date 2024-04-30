@@ -41,7 +41,7 @@ secondArea.addEventListener("click", timeSelectHandler)
 
 const confirmBtn = el("button", "确定")
 const cancelBtn = el("button", "取消")
-const actions = el("div", [confirmBtn, cancelBtn], {"class": "time-picker-actions"})
+const actions = el("div", [confirmBtn, cancelBtn], {"class": "actions"})
 
 const dialogEl = el("dialog",
     el("div", [hourArea, minuteArea, secondArea, actions], {

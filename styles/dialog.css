@@ -1,0 +1,19 @@
+dialog {
+    width: 85%;
+    max-width: 25rem;
+    color: var(--fr-color);
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    box-shadow: var(--shadow-lg);
+}
+
+dialog .actions {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    grid-area: action;
+    margin-top: 2rem;
+    color: var(--accent-color);
+}

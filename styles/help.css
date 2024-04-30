@@ -1,0 +1,32 @@
+#help-info h1 {
+    width: fit-content;
+    margin: 0;
+    margin-right: auto;
+    padding: .6rem 1.2rem;
+    color: var(--accent-color-darken);
+    background-color: var(--high-bg-color);
+    border-radius: .6rem;
+}
+
+#help-info li::marker {
+    font-size: 1.5rem;
+    color: var(--accent-color-darken);
+}
+#help-info li b {
+    color: var(--accent-color-darken);
+}
+
+#help-info li img {
+    vertical-align: middle;
+}
+
+@media screen and (orientation: portrait) {
+    #help-info .landscape {
+        display: none;
+    }
+}
+@media screen and (orientation: landscape) {
+    #help-info .portrait {
+        display: none;
+    }
+}
