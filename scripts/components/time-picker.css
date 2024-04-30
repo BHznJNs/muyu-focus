@@ -30,7 +30,7 @@ time-picker .minute,
 time-picker .second {
     padding: 6px 8px;
     background-color: var(--high-bg-color);
-    border-radius: 1rem;
+    border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
     cursor: pointer;
     user-select: none;

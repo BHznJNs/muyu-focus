@@ -4,7 +4,7 @@ dialog {
     color: var(--fr-color);
     background-color: var(--bg-color);
     border: none;
-    border-radius: 12px;
+    border-radius: var(--border-radius-md);
     outline: none;
     box-shadow: var(--shadow-lg);
 }

@@ -8,7 +8,7 @@ button {
     font-family: inherit;
     cursor: pointer;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     user-select: none;
     transition: color .3s,
                 background .3s;
@@ -27,7 +27,7 @@ button.action {
     width: 5.5rem;
     height: 5.5rem;
     padding: .4rem;
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
 }
 
 button.action.small {

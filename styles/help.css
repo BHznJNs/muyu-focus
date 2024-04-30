@@ -5,7 +5,7 @@
     padding: 1rem 40px;
     color: var(--accent-color-darken);
     background-color: var(--high-bg-color);
-    border-radius: .6rem;
+    border-radius: var(--border-radius-md);
 }
 
 #help-info li::marker {
