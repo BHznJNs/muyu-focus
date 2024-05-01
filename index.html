@@ -22,6 +22,24 @@ if (darkModeMediaQuery) {
     darkModeSwitcher()
 }
 </script>
+<dialog id="time-picker-dialog" is="time-picker"></dialog>
+<dialog id="help-info">
+    <h1>使用说明</h1>
+    <ol class="portrait">
+        <li><b>选择时间限制：</b>点击界面中间的时间选择器选择目标专注时长。</li>
+        <li><b>开始专注：</b>点击界面下方的<img src="./assets/icons/play_arrow.svg">按钮开始计时，程序会自动发出随机间隔的白噪音，请默数白噪音的出现次数。</li>
+        <li><b>结算：</b>在倒计时结束后，程序会自动弹出结算画面，你可以在此核对你的实际计数并进行专注程度的评估。</li>
+    </ol>
+    <ol class="landscape">
+        <li><b>选择时间限制：</b>通过界面右侧的时间选择器或者时间备选项选择目标专注时长。</li>
+        <li><b>开始专注：</b>点击界面右下角的<img src="./assets/icons/play_arrow.svg">按钮开始计时，程序会自动发出随机间隔的白噪音，请默数白噪音的出现次数。</li>
+        <li><b>结算：</b>在倒计时结束后，程序会自动弹出结算画面，你可以在此核对你的实际计数并进行专注程度的评估。</li>
+    </ol>
+    <div class="actions">
+        <button onclick="document.querySelector('#help-info').close()">关闭</button>
+    </div>
+</dialog>
+
 <main>
     <div class="sound-source">
         <div class="sound-image">
@@ -47,7 +65,7 @@ if (darkModeMediaQuery) {
     <div class="tabs-container">
         <div class="tabs show-countdown">
             <div class="countdown ready">
-                <time-picker id="timer"></time-picker>
+                <count-down id="timer"></count-down>
                 <div class="time-candidates">
                     <button>00:00:30</button>
                     <button>00:02:00</button>
@@ -73,7 +91,7 @@ if (darkModeMediaQuery) {
                     <h1>完成！</h1>
                     <div class="cards">
                         <div class="card-desc">专注时长：</div>
-                        <time-picker id="result-duration"></time-picker>
+                        <count-down id="result-duration"></count-down>
                         <div class="card-desc">响声次数：</div>
                         <span><span id="sound-count">0</span>次</span>
                     </div>
@@ -101,21 +119,5 @@ if (darkModeMediaQuery) {
         <img src="./assets/icons/help.svg" draggable="false">
     </button>
 </div>
-<dialog id="help-info">
-    <h1>使用说明</h1>
-    <ol class="portrait">
-        <li><b>选择时间限制：</b>点击界面中间的时间选择器选择目标专注时长。</li>
-        <li><b>开始专注：</b>点击界面下方的<img src="./assets/icons/play_arrow.svg">按钮开始计时，程序会自动发出随机间隔的白噪音，请默数白噪音的出现次数。</li>
-        <li><b>结算：</b>在倒计时结束后，程序会自动弹出结算画面，你可以在此核对你的实际计数并进行专注程度的评估。</li>
-    </ol>
-    <ol class="landscape">
-        <li><b>选择时间限制：</b>通过界面右侧的时间选择器或者时间备选项选择目标专注时长。</li>
-        <li><b>开始专注：</b>点击界面右下角的<img src="./assets/icons/play_arrow.svg">按钮开始计时，程序会自动发出随机间隔的白噪音，请默数白噪音的出现次数。</li>
-        <li><b>结算：</b>在倒计时结束后，程序会自动弹出结算画面，你可以在此核对你的实际计数并进行专注程度的评估。</li>
-    </ol>
-    <div class="actions">
-        <button onclick="document.querySelector('#help-info').close()">关闭</button>
-    </div>
-</dialog>
 </body>
 </html>

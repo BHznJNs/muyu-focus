@@ -9,6 +9,10 @@ dialog {
     box-shadow: var(--shadow-lg);
 }
 
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
 dialog .actions {
     display: flex;
     flex-direction: row-reverse;

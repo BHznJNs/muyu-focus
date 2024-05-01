@@ -2,7 +2,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    gap: .4rem;
+    gap: .6rem;
     padding: 1.2rem .8rem;
 }
 

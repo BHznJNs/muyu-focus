@@ -8,6 +8,7 @@
 @import url(./countdown.css);
 @import url(./result.css);
 @import url(./help.css);
+@import url(../scripts/components/count-down.css);
 @import url(../scripts/components/time-picker.css);
 
 body {

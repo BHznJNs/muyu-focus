@@ -1,0 +1,53 @@
+count-down {
+    display: flex;
+    gap: 4px;
+    align-items: baseline;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2.8rem;
+    font-family:
+        JetBrains Mono, Fira Code,
+        Menlo, Monaco,
+        Consolas, monospace;
+    color: var(--ft-color);
+    transition: gap .3s,
+                color .3s,
+                background .3s;
+}
+
+count-down:hover {
+    gap: 6px;
+}
+
+count-down:hover .hour,
+count-down:hover .minute,
+count-down:hover .second {
+    box-shadow: var(--shadow-md-1);
+}
+
+count-down .hour,
+count-down .minute,
+count-down .second {
+    padding: 6px 8px;
+    background-color: var(--high-bg-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    user-select: none;
+    transition: box-shadow .3s .3s;
+}
+
+@media screen and (min-width: 768px) {
+    count-down {
+        font-size: 3.2rem;
+    }
+}
+@media screen and (max-height: 420px) {
+    count-down {
+        gap: 2px;
+        font-size: 2.7rem;
+    }
+    count-down:hover {
+        gap: 4px;
+    }
+}

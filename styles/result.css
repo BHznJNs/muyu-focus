@@ -50,13 +50,13 @@
     margin-left: 2rem;
 }
 
-.cards time-picker {
+.cards count-down {
     gap: 2px;
     font-size: 1.75rem;
     margin: 0;
     pointer-events: none;
 }
-.cards time-picker .colon {
+.cards count-down .colon {
     font-size: 1.5rem;
 }
 

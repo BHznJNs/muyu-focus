@@ -2,8 +2,8 @@ import createPlayLoop from "./player.js"
 import { setDuration, setSoundCount } from "./resultController.js"
 import switchToTab from "./tabsController.js"
 
-const timePicker = document.querySelector("#timer")
-const countdownContainer = document.querySelector(".countdown")
+const countdownTimer = document.querySelector("#timer")
+const countdownContainer = document.querySelector("div.countdown")
 const timeCandidates = countdownContainer.querySelector(".time-candidates")
 
 let countdownOperator = null
@@ -28,7 +28,7 @@ function stop() {
 }
 
 function countdown(tickCallback, stopCallback, endCallback) {
-    let currentTimeValue = timePicker.value
+    let currentTimeValue = countdownTimer.value
     let timeout = null
     const start = getNow()
     const interval = 1000
@@ -79,12 +79,12 @@ document
 
     countdownOperator = countdown(
         // update timePicker ui per tick
-        countdownTime => timePicker.renderTime(countdownTime),
+        countdownTime => countdownTimer.renderTime(countdownTime),
         // return timePicker ui when stopped
-        () => timePicker.renderTime(timePicker.value),
+        () => countdownTimer.renderTime(countdownTimer.value),
         // when successfully finished countdown
         () => {
-            setDuration(timePicker.value)
+            setDuration(countdownTimer.value)
             setSoundCount(playLoopOperator.count())
             stop()
             switchToTab("result")

@@ -1,52 +1,10 @@
-time-picker {
-    display: flex;
-    gap: 4px;
-    align-items: baseline;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 2.8rem;
-    font-family:
-        JetBrains Mono, Fira Code,
-        Menlo, Monaco,
-        Consolas, monospace;
-    color: var(--ft-color);
-    transition: gap .3s,
-                color .3s,
-                background .3s;
-}
-
-time-picker:hover {
-    gap: 6px;
-}
-
-time-picker:hover .hour,
-time-picker:hover .minute,
-time-picker:hover .second {
-    box-shadow: var(--shadow-md-1);
-}
-
-time-picker .hour,
-time-picker .minute,
-time-picker .second {
-    padding: 6px 8px;
-    background-color: var(--high-bg-color);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-sm);
-    cursor: pointer;
-    user-select: none;
-    transition: box-shadow .3s .3s;
-}
-
-#time-picker-dialog .time-picker-container {
+dialog[is=time-picker] .time-picker-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr auto;
     grid-template-areas:
         "hour minute second"
         "action action action";
-}
-#time-picker-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.4);
 }
 
 .time-picker-hour,
@@ -85,19 +43,4 @@ time-picker .second {
 }
 .time-picker-item.selected {
     color: var(--accent-color)
-}
-
-@media screen and (min-width: 768px) {
-    time-picker {
-        font-size: 3.2rem;
-    }
-}
-@media screen and (max-height: 420px) {
-    time-picker {
-        gap: 2px;
-        font-size: 2.7rem;
-    }
-    time-picker:hover {
-        gap: 4px;
-    }
 }
